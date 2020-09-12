@@ -1,21 +1,32 @@
 import React from 'react'
 import './App.css'
-import { Canvas } from 'react-three-fiber'
-import { Box } from './Components/Box'
+
 import GlobalStyle from './globalStyle'
-import { Header } from './Components/Header/Header'
+import { Header } from './Components/Header'
+import { CardsPage } from './Components/Cards/CardsPage'
+import { ComponentPage } from './Components/ComponentPage'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 function App() {
     return (
-        <div>
+        <Router>
             <GlobalStyle />
             <Header />
-            {/* <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
-      </Canvas> */}
-        </div>
+            <Switch>
+                <Route extend path="/component/:componentId?">
+                    <ComponentPage />
+                </Route>
+                <Route extend path="/components">
+                    <CardsPage />
+                </Route>
+                <Route path="/about">
+                    <div>about</div>
+                </Route>
+                <Route path="/">
+                    <div>home</div>
+                </Route>
+            </Switch>
+        </Router>
     )
 }
 
