@@ -8,14 +8,31 @@ import { a, useSpring } from 'react-spring/three'
 //@ts-ignore
 softShadows()
 
-const Sponge: React.FC<any> = ({ position, args, color }) => {
+const Sponge: React.FC<any> = ({ position, args, color, speed }) => {
     const mesh = useRef<any>(null)
     useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+
+    const [expand, setExpand] = useState(false)
+    const props = useSpring({
+        scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
+    })
+
     return (
-        <mesh castShadow position={position} ref={mesh}>
+        <a.mesh
+            onClick={() => setExpand(!expand)}
+            scale={props.scale}
+            castShadow
+            position={position}
+            ref={mesh}
+        >
             <boxBufferGeometry attach="geometry" args={args} />
-            <meshStandardMaterial attach="material" color={color} />
-        </mesh>
+            <MeshWobbleMaterial
+                attach="material"
+                color={color}
+                speed={speed}
+                factor={1}
+            />
+        </a.mesh>
     )
 }
 
@@ -63,9 +80,11 @@ export const FlyingSponges = () => {
                     position={[0, 1, 0]}
                     args={[3, 2, 1]}
                     color="lightgreen"
+                    speed={2}
                 />
-                <Sponge position={[-2, 1, -5]} color="hotpink" />
-                <Sponge position={[5, 1, -2]} color="hotpink" />
+                <Sponge position={[-2, 1, -5]} color="hotpink" speed={1} />
+                <Sponge position={[5, 1, -2]} color="hotpink" speed={3} />
+                <OrbitControls />
             </Canvas>
         </>
     )
