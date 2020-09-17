@@ -6,7 +6,7 @@ import { Header } from './Components/Header'
 import { CardsPage } from './Components/Cards/CardsPage'
 import { ComponentPage } from './Components/ComponentPage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
+import { Home } from './Components/Home'
 function App() {
     return (
         <Router>
@@ -23,7 +23,7 @@ function App() {
                     <div>about</div>
                 </Route>
                 <Route path="/">
-                    <div>home</div>
+                    <Home />
                 </Route>
             </Switch>
         </Router>

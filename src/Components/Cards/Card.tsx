@@ -6,7 +6,7 @@ const CardContainer = styled.div`
     width: 200px;
     height: 300px;
     border-radius: 20px;
-    box-shadow: 0 0 10px 0.1px grey;
+    box-shadow: 0 0 5px 0.1px grey;
     margin: 30px;
     transition: all 0.2s;
     &:hover {
