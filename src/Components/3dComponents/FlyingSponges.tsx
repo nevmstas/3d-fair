@@ -89,34 +89,3 @@ export const FlyingSponges = () => {
         </>
     )
 }
-
-// softShadows()
-
-// export const FlyingSponge = ({ position, color, speed, args }) =>{
-//     const mesh = useRef()
-
-//     useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
-//     const [expand, setExpand] = useState(false)
-//     const props = useSpring({
-//         scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
-//     })
-//     const look = useSpring({opacity: 1, from: {opacity: 0} })
-
-//     return (
-//         <a.mesh
-//             position={position}
-//             ref={mesh}
-//             onClick={()=>setExpand(!expand)}
-//             scale={props.scale}
-//             castShadow>
-//                 {console.log(look)}
-//             <boxBufferGeometry attach='geometry' args={args} />
-//             <MeshWobbleMaterial
-//                 color={color}
-//                 speed={speed}
-//                 attach='material'
-//                 factor={0.6}
-//                 />
-//         </a.mesh>
-//     )
-// }

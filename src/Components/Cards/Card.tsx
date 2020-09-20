@@ -14,21 +14,37 @@ const CardContainer = styled.div`
         box-shadow: 0 2px 10px 0.1px grey;
     }
 `
-const ImageContainer = styled.div``
-const Text = styled.div``
+const ImageContainer = styled.div`
+    height: 150px;
+    background-color: #cc66ff;
+    border-radius: 20px 20px 0 0;
+`
+const Text = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+`
+const MyNavLink = styled(NavLink)`
+    text-decoration: none;
+`
 
-export const Card = () => {
+interface PropsT {
+    title: string
+    desc: string
+}
+
+export const Card: React.FC<PropsT> = ({ title, desc }) => {
     return (
-        <NavLink to={`component/${1}`}>
+        <MyNavLink to={`component/${1}`}>
             <CardContainer>
                 <ImageContainer>
                     {/* <img src="https://wallpapercave.com/wp/u9AVLry.jpg"></img> */}
                 </ImageContainer>
                 <Text>
-                    <h1>Text</h1>
-                    <span>Description text</span>
+                    <h2>{title}</h2>
+                    <span>{desc}</span>
                 </Text>
             </CardContainer>
-        </NavLink>
+        </MyNavLink>
     )
 }
