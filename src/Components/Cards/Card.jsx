@@ -23,17 +23,25 @@ const Text = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 5px;
 `
 const MyNavLink = styled(NavLink)`
     text-decoration: none;
 `
+const Title = styled.h2`
+    font-size: ${(props) => (props.len === 10 ? '25px' : '20px')};
+`
 
-interface PropsT {
-    title: string
-    desc: string
-}
+export const Card = ({ title, desc }) => {
+    const cutDesc = (desc) => {
+        let result = ''
+        if (desc.length > 50) {
+            result = desc.slice(0, 45) + ' . . .'
+            return result
+        }
+        return desc
+    }
 
-export const Card: React.FC<PropsT> = ({ title, desc }) => {
     return (
         <MyNavLink to={`component/${1}`}>
             <CardContainer>
@@ -41,8 +49,8 @@ export const Card: React.FC<PropsT> = ({ title, desc }) => {
                     {/* <img src="https://wallpapercave.com/wp/u9AVLry.jpg"></img> */}
                 </ImageContainer>
                 <Text>
-                    <h2>{title}</h2>
-                    <span>{desc}</span>
+                    <Title len={title.length}>{title}</Title>
+                    <span>{cutDesc(desc)}</span>
                 </Text>
             </CardContainer>
         </MyNavLink>

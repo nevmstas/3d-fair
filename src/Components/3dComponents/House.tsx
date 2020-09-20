@@ -6,5 +6,5 @@ import { softShadows, MeshWobbleMaterial, OrbitControls } from 'drei'
 import { a, useSpring } from 'react-spring/three'
 
 export const House = () => {
-    return <Canvas></Canvas>
+    return <div>house</div>
 }

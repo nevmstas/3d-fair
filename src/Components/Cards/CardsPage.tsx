@@ -18,11 +18,9 @@ export const CardsPage = () => {
                 />
                 <Card
                     title={'SpinerCube'}
-                    desc={'3d cube model with hover effect'}
-                />
-                <Card
-                    title={'SpinerCube'}
-                    desc={'3d cube model with hover effect'}
+                    desc={
+                        '3d cube model with hover effectfsdflskfdl;k fsdkjfkdsjk fkjsdklfjsldjflk sjdflksjdflksdj f kfjdslkjfkldsjl'
+                    }
                 />
                 <Card
                     title={'SpinerCube'}
