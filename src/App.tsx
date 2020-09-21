@@ -7,14 +7,20 @@ import { CardsPage } from './Components/Cards/CardsPage'
 import { ComponentPage } from './Components/ComponentPage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Home } from './Components/Home'
+import { FlyingSponges } from './Components/3dComponents/FlyingSponges'
 function App() {
     return (
         <Router>
             <GlobalStyle />
             <Header />
             <Switch>
-                <Route extend path="/component/:componentId?">
-                    <ComponentPage />
+                <Route extend path="/component/FlyingSponges">
+                    <ComponentPage
+                        title={'Flying Sponges'}
+                        desc={'desc desc descdescdescdescdesc'}
+                        tech={'canvas'}
+                        children={<FlyingSponges />}
+                    />
                 </Route>
                 <Route extend path="/components">
                     <CardsPage />

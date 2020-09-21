@@ -15,28 +15,34 @@ export const CardsPage = () => {
                 <Card
                     title={'Flying sponges'}
                     desc={'3d models of 3 sponges using react-spring'}
+                    route={'FlyingSponges'}
                 />
                 <Card
                     title={'SpinerCube'}
                     desc={
                         '3d cube model with hover effectfsdflskfdl;k fsdkjfkdsjk fkjsdklfjsldjflk sjdflksjdflksdj f kfjdslkjfkldsjl'
                     }
+                    route={'FlyingSponges'}
                 />
                 <Card
                     title={'SpinerCube'}
                     desc={'3d cube model with hover effect'}
+                    route={'FlyingSponges'}
                 />
                 <Card
                     title={'SpinerCube'}
                     desc={'3d cube model with hover effect'}
+                    route={'FlyingSponges'}
                 />
                 <Card
                     title={'SpinerCube'}
                     desc={'3d cube model with hover effect'}
+                    route={'FlyingSponges'}
                 />
                 <Card
                     title={'SpinerCube'}
                     desc={'3d cube model with hover effect'}
+                    route={'FlyingSponges'}
                 />
             </CardsWrapper>
         </ContentWrapper>

@@ -32,7 +32,7 @@ const Title = styled.h2`
     font-size: ${(props) => (props.len === 10 ? '25px' : '20px')};
 `
 
-export const Card = ({ title, desc }) => {
+export const Card = ({ title, desc, route }) => {
     const cutDesc = (desc) => {
         let result = ''
         if (desc.length > 50) {
@@ -43,7 +43,7 @@ export const Card = ({ title, desc }) => {
     }
 
     return (
-        <MyNavLink to={`component/${1}`}>
+        <MyNavLink to={`component/${route}`}>
             <CardContainer>
                 <ImageContainer>
                     {/* <img src="https://wallpapercave.com/wp/u9AVLry.jpg"></img> */}
